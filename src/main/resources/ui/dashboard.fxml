@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="1000.0" prefWidth="1400.0" stylesheets="@../styles/Styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fordsoft.tech.mydesk.controller.DashboardController">
+   <top>
+      <MenuBar BorderPane.alignment="TOP_LEFT">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#exit" text="Exit" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <right>
+      <VBox alignment="TOP_RIGHT" prefHeight="1000.0" prefWidth="1500.0" style="-fx-text-fill: white;" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="TOP_RIGHT" prefHeight="41.0" prefWidth="1000.0">
+               <children>
+                  <Button fx:id="delete" mnemonicParsing="false" onAction="#delete" prefHeight="31.0" prefWidth="66.0" style="-fx-background-color: #a451a4;" text="Delete" textFill="#fefffe">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin></Button>
+                  <Button fx:id="btnLogout1" layoutX="627.0" layoutY="15.0" mnemonicParsing="false" onAction="#logout" prefHeight="22.0" prefWidth="70.0" style="-fx-background-color: #a451a4;" styleClass="background" text="Logout" textFill="#fff9f9" textOverrun="CLIP">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <effect>
+                        <DropShadow blurType="ONE_PASS_BOX" color="#00000091" />
+                     </effect>
+                  </Button>
+                  <Button fx:id="comment" layoutX="566.0" layoutY="10.0" mnemonicParsing="false" onAction="#comment" prefHeight="31.0" prefWidth="66.0" style="-fx-background-color: #a451a4;" text="Comment" textFill="#fefffe" />
+               </children>
+               <VBox.margin>
+                  <Insets right="70.0" />
+               </VBox.margin>
+            </HBox>
+            <ScrollPane>
+               <VBox.margin>
+                  <Insets left="10.0" right="5.0" />
+               </VBox.margin>
+               <content>
+                  <TableView fx:id="userTable" minHeight="800.0" tableMenuButtonVisible="true">
+                    <columns>
+                      <TableColumn fx:id="colUserId" maxWidth="700.0" minWidth="30.0" prefWidth="20.0" text="ID" />
+                      <TableColumn fx:id="colFullName" maxWidth="150.0" minWidth="200.0" prefWidth="150.0" text="Full Name" />
+      
+                                          <TableColumn fx:id="colDob" maxWidth="0.0" minWidth="70.0" prefWidth="50.0" text="Dob" />
+                        <TableColumn fx:id="colDofa" maxWidth="0.0" minWidth="70.0" prefWidth="100.0" text="Dofa" />
+                        <TableColumn fx:id="colDoc" maxWidth="70.0" minWidth="70.0" prefWidth="70.0" text="Doc" />
+                        <TableColumn fx:id="colDopa" maxWidth="70.0" minWidth="70.0" prefWidth="70.0" text="Dopa" />
+                        <TableColumn fx:id="colRank" maxWidth="70.0" minWidth="70.0" prefWidth="70.0" text="Rank" />
+                        <TableColumn fx:id="colGradeLevel" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" text="GradeLevel" />
+                        <TableColumn fx:id="colQualification" maxWidth="100.0" minWidth="50.0" prefWidth="100.0" text="Qualification" />
+                        <TableColumn fx:id="colLga" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" text="Lga" />
+                        <TableColumn fx:id="colPsn" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" text="Psn" />
+                        <TableColumn fx:id="colGender" maxWidth="6000.0" minWidth="100.0" prefWidth="100.0" text="Gender" />
+                        <TableColumn fx:id="colCadre" maxWidth="6000.0" minWidth="100.0" prefWidth="100.0" text="Cadre" />
+                        <TableColumn fx:id="colLocation" maxWidth="6000.0" minWidth="100.0" prefWidth="100.0" text="Location" />
+                        <TableColumn fx:id="colEmail" maxWidth="6000.0" minWidth="100.0" prefWidth="100.0" text="Email" />
+                        <TableColumn fx:id="colDatecreated" maxWidth="6000.0" minWidth="100.0" prefWidth="100.0" text="Datecreated" />
+                        <TableColumn fx:id="colEdit" maxWidth="3500.0" minWidth="75.0" prefWidth="75.0" text="Edit" />
+                    </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                     <contextMenu>
+                        <ContextMenu>
+                          <items>
+                            <MenuItem fx:id="deleteUsers" mnemonicParsing="false" onAction="#deleteUsers" text="Delete" />
+                          </items>
+                        </ContextMenu>
+                     </contextMenu>
+                  </TableView>
+               </content>
+            </ScrollPane>
+            <VBox prefHeight="571.0" prefWidth="306.0" spacing="10.0" style="-fx-background-color: #607794;" styleClass="background" stylesheets="@../styles/Styles.css">
+               <children>
+                  <Label alignment="CENTER" text="Add New User" textFill="WHITE">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="200.0" top="5.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label text="User ID - " textFill="#f8f7f7">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="400.0" top="-40.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label fx:id="userId" prefHeight="18.0" prefWidth="38.0" textFill="#f5f0f0">
+                     <VBox.margin>
+                        <Insets bottom="30.0" left="480.0" top="-30.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox prefHeight="30.0" prefWidth="265.0">
+                     <children>
+                        <AnchorPane prefHeight="669.0" prefWidth="1130.0" style="-fx-background-color: #607794;">
+                           <children>
+                              <GridPane layoutX="14.0" prefHeight="505.0" prefWidth="1063.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="217.0" minWidth="200.0" percentWidth="0.0" prefWidth="150.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="250.0" minWidth="250.0" percentWidth="0.0" prefWidth="250.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="328.0" minWidth="200.0" prefWidth="328.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="250.0" minWidth="250.0" percentWidth="0.0" prefWidth="250.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="360.0" minWidth="200.0" prefWidth="247.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="250.0" minWidth="10.0" percentWidth="0.0" prefWidth="250.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints maxHeight="46.0" minHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="28.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="46.0" minHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="28.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="46.0" minHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="28.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="46.0" minHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="28.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="46.0" minHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="28.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <Label id="lblFullName" prefHeight="19.0" prefWidth="128.0" text="Full Name:" textFill="#f4f4f4">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <Label id="lblMail" fx:id="txtBirth" prefHeight="16.0" prefWidth="126.0" text="Date of Birth:" textFill="#f8f5f5" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <Label id="lblPass" prefHeight="21.0" prefWidth="186.0" text="Date of first Appointment:" textFill="#f4f4f4" GridPane.rowIndex="4">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <Label id="lblCountry" prefHeight="21.0" prefWidth="189.0" text="Date of Confirmation:" textFill="#f4f4f4" GridPane.rowIndex="6">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <Label id="lblCity" prefHeight="21.0" prefWidth="219.0" text="Date of Present Appointment:" textFill="#f4f4f4" GridPane.rowIndex="8">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <Label id="lblNameError" fx:id="lblNameError" prefHeight="16.0" prefWidth="220.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <Label id="lblMailError" fx:id="lblMailError" prefHeight="16.0" prefWidth="228.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                    <Label id="lblPassError" fx:id="lblPassError" prefHeight="16.0" prefWidth="240.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                    <Label id="lblCountryError" fx:id="lblCountryError" prefHeight="16.0" prefWidth="238.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                                    <Label id="lblCityError" fx:id="lblCityError" prefHeight="16.0" prefWidth="220.0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                                    <Label id="lblFullName" prefHeight="19.0" prefWidth="128.0" text="Lga:" textFill="#f4f4f4" GridPane.columnIndex="2">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="100.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <JFXTextField fx:id="txtFullName" focusColor="#f4e6f4" labelFloat="true" prefHeight="25.0" prefWidth="270.0" promptText="Enter your full Name" style="-fx-text-fill: white;" unFocusColor="#fff9f9" GridPane.columnIndex="1">
+                                       <padding>
+                                          <Insets left="20.0" />
+                                       </padding></JFXTextField>
+                                    <JFXDatePicker fx:id="txtDofa" defaultColor="#f5f4f5" prefHeight="25.0" prefWidth="257.0" promptText="First Appointment day" style="-fx-text-fill: whte;" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                       <GridPane.margin>
+                                          <Insets left="20.0" />
+                                       </GridPane.margin></JFXDatePicker>
+                                    <JFXDatePicker fx:id="txtDoc" defaultColor="#fff9ff" prefHeight="25.0" prefWidth="259.0" promptText="Date of Confirmation" style="-fx-text-fill: white;" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                       <GridPane.margin>
+                                          <Insets left="20.0" />
+                                       </GridPane.margin></JFXDatePicker>
+                                    <JFXDatePicker fx:id="txtDopa" defaultColor="#ebe4eb" prefHeight="25.0" prefWidth="263.0" promptText="Present Appointment Day" style="-fx-text-fill: white;" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                                       <GridPane.margin>
+                                          <Insets left="20.0" />
+                                       </GridPane.margin></JFXDatePicker>
+                                    <Label text="Qualification:" textFill="#f4f4f4" GridPane.columnIndex="4" GridPane.rowIndex="4">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="70.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label text="GradeLevel:" textFill="#f4f4f4" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="70.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label text="Psn:" textFill="#f4f4f4" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="100.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label text="Gender:" textFill="#f4f4f4" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="100.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label text="Cadre:" textFill="#f4f4f4" GridPane.columnIndex="2" GridPane.rowIndex="6">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="100.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label text="Location:" textFill="#f4f4f4" GridPane.columnIndex="2" GridPane.rowIndex="8">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="100.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label text="Email:" textFill="#f4f4f4" GridPane.columnIndex="4" GridPane.rowIndex="6">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="70.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label text="Password:" textFill="#f4f4f4" GridPane.columnIndex="4" GridPane.rowIndex="8">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="70.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <JFXComboBox fx:id="txtGradelevel" focusColor="#f4e6f4" labelFloat="true" prefHeight="25.0" prefWidth="240.0" promptText="Gradelevel" style="-fx-text-fill: white;" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+                                    <JFXComboBox fx:id="txtqualification" focusColor="#f4e6f4" labelFloat="true" prefHeight="25.0" prefWidth="246.0" promptText="Highest qualification" style="-fx-text-fill: white;" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+                                    <JFXComboBox fx:id="txtLga" focusColor="#f4e6f4" labelFloat="true" prefHeight="25.0" prefWidth="270.0" promptText="Your Lga" style="-fx-text-fill: white;" GridPane.columnIndex="3" />
+                                    <JFXTextField fx:id="txtPsn" focusColor="#f4e6f4" labelFloat="true" promptText="Psn" style="-fx-text-fill: white;" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                                    <JFXRadioButton fx:id="txtmale" style="-fx-text-fill: white;" text="Male" textFill="#f4f4f4" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="group" />
+                                       </toggleGroup>
+                                    </JFXRadioButton>
+                                    <JFXRadioButton fx:id="txtfemale" text="Female" textFill="#f4f4f4" toggleGroup="$group" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                                       <GridPane.margin>
+                                          <Insets left="70.0" />
+                                       </GridPane.margin>
+                                    </JFXRadioButton>
+                                    <JFXComboBox fx:id="txtranks" focusColor="#f4e6f4" labelFloat="true" prefHeight="25.0" prefWidth="247.0" promptText="Your present rank" style="-fx-text-fill: white; -fx-text-inner-color: white;" GridPane.columnIndex="5" />
+                                    <JFXComboBox fx:id="txtCadre" focusColor="#f4e6f4" labelFloat="true" prefHeight="25.0" prefWidth="325.0" promptText="Your cadre" style="-fx-text-fill: white;" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+                                    <JFXTextField fx:id="txtLocation" focusColor="#f4e6f4" labelFloat="true" promptText="Present Location" style="-fx-text-fill: white;" GridPane.columnIndex="3" GridPane.rowIndex="8" />
+                                    <JFXTextField fx:id="txtEmail" focusColor="#f4e6f4" labelFloat="true" promptText="Your mail Address" style="-fx-text-fill: white;" GridPane.columnIndex="5" GridPane.rowIndex="6" />
+                                    <JFXTextField fx:id="txtPass" focusColor="#f4e6f4" labelFloat="true" promptText="Dont forget your password" style="-fx-text-fill: white;" GridPane.columnIndex="5" GridPane.rowIndex="8" />
+                                    <JFXDatePicker fx:id="txtDob" defaultColor="#f2eaf2" prefHeight="25.0" prefWidth="261.0" promptText="Your birth day" style="-fx-text-fill: white;" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                       <GridPane.margin>
+                                          <Insets left="20.0" />
+                                       </GridPane.margin></JFXDatePicker>
+                                    <Label text="Rank:" textFill="#f4f4f4" GridPane.columnIndex="4">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="70.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Button fx:id="reset" mnemonicParsing="false" onAction="#reset" prefHeight="30.0" prefWidth="75.0" style="-fx-background-color: #a451a4;" text="Reset" textFill="#f2ecec" GridPane.columnIndex="2" GridPane.rowIndex="10">
+                                       <effect>
+                                          <DropShadow blurType="ONE_PASS_BOX" color="#1965d0" />
+                                       </effect>
+                                       <GridPane.margin>
+                                          <Insets left="70.0" />
+                                       </GridPane.margin>
+                                    </Button>
+                                    <Button fx:id="saveUser" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#saveUser" prefHeight="30.0" prefWidth="75.0" style="-fx-background-color: #a451a4;" styleClass="btnGreen" text="Save" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="10">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                       <effect>
+                                          <DropShadow blurType="ONE_PASS_BOX" color="#6468b2" />
+                                       </effect>
+                                    </Button>
+                                    <TextField fx:id="search" promptText="Search" style="-fx-text-fill: white;" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                                 </children>
+                                 <padding>
+                                    <Insets left="20.0" top="-20.0" />
+                                 </padding>
+                              </GridPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="25.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox prefHeight="30.0" prefWidth="250.0" spacing="10.0">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <VBox.margin>
+                        <Insets left="110.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </VBox>
+         </children>
+      </VBox>
+   </right>
+</BorderPane>
